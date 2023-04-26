@@ -6,7 +6,8 @@ serverid = 547840113086824527 #no quote
 rolename = "My epic role" #role are case-sensitive
 botuser = True #set to True if you're using a bot account or to false if you are using a user account
 
-client = discord.Client()
+intents = discord.Intents.all()
+client = discord.Client(intents=intents)
 server = client.get_guild(serverid)
 
 @client.event
@@ -39,4 +40,4 @@ async def on_ready():
     else:
         print("how did you get here?")
                 
-client.run(token, bot=botuser)
+client.run(token)
